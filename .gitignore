@@ -1,0 +1,10 @@
+venv/
+models/
+results/
+labels/
+wandb/
+A_CREATE_DATASET/
+data/
+__pycache__/
+.idea/
+*.egg-info/

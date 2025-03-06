@@ -1,0 +1,39 @@
+program: scripts/phase2/att1/optimize_att1_net.py
+method: bayes
+metric:
+    name: final_eval_acc
+    goal: maximize
+parameters:
+    learning_rate1:
+        distribution: log_uniform
+        min: -10
+        max: -7
+    learning_rate2:
+        distribution: log_uniform
+        min: -10
+        max: -2
+    learning_rate4:
+        distribution: log_uniform
+        min: -10
+        max: -6
+    learning_rate3:
+        distribution: log_uniform
+        min: -10
+        max: -2
+    optimizer3:
+        values: [ 'Adam', 'RMS', 'SGD']
+    gamma3:
+        distribution: inv_log_uniform_values
+        min: 0.5
+        max: 1
+    dim_inner:
+        distribution: int_uniform
+        min: 5
+        max: 150
+    dim_qk:
+        distribution: int_uniform
+        min: 5
+        max: 150
+    merger_act:
+        values: [ 'Sigm', 'Tanh', 'ReLU' ]
+

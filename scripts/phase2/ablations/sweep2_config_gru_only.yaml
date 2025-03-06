@@ -1,0 +1,28 @@
+program: scripts/phase2/ablations/optimize_att_gru_only.py
+method: bayes
+metric:
+  name: final_eval_acc
+  goal: maximize
+parameters:
+  attention_act:
+    values: ['Sigm', 'Tanh', 'ReLU']
+  out1:
+    distribution: int_uniform
+    min: 5
+    max: 200
+  out2:
+    distribution: int_uniform
+    min: 10
+    max: 32
+  out3:
+    distribution: int_uniform
+    min: 8
+    max: 64
+  dim_qk_gru:
+    distribution: int_uniform
+    min: 5
+    max: 200
+  dim_v:
+    distribution: int_uniform
+    min: 5
+    max: 200

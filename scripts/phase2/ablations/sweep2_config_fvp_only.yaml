@@ -1,0 +1,26 @@
+program: scripts/phase2/ablations/optimize_att_fvp_only.py
+method: bayes
+metric:
+  name: final_eval_acc
+  goal: maximize
+parameters:
+  merger_act:
+    values: ['Sigm', 'Tanh', 'ReLU']
+  out1:
+    distribution: int_uniform
+    min: 5
+    max: 200
+  out3:
+    distribution: int_uniform
+    min: 8
+    max: 64
+  optimizer_att:
+    values: [ 'Adam', 'RMS', 'SGD']
+  dim_qk:
+    distribution: int_uniform
+    min: 5
+    max: 200
+  dim_inner:
+    distribution: int_uniform
+    min: 5
+    max: 200
